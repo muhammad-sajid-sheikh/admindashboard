@@ -40,11 +40,6 @@ export default function AdminDashboard() {
           phone: order.phone,
           email: order.email,
           address: order.address,
-          city: "N/A",
-          cartItems: order.items.map((item) => ({
-            productName: item.title,
-            image: null,
-          })),
           total: order.totalPriceWithVat,
           status: order.status, // ✅ Directly assign status as a string
         }));
