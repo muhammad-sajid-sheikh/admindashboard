@@ -2,10 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
-import Image from "next/image";
-import { urlFor } from "@/sanity/lib/image";
 import Swal from "sweetalert2";
 import ProRoute from "@/app/components/ProRoute";
+
 
 interface Order {
   Status: string | number | readonly string[] | undefined;
@@ -22,7 +21,7 @@ interface Order {
 
 interface Item {
   productName: string;
-  image: any;
+  
 }
 
 export default function AdminDashboard() {
@@ -241,27 +240,7 @@ export default function AdminDashboard() {
                                   <strong>City:</strong> {order.city}
                                 </p>
                               </div>
-                              <div>
-                                <ul>
-                                  {order.cartItems.map((item, index) => (
-                                    <li
-                                      key={`${order._id}-${index}`}
-                                      className="flex items-center gap-2 text-gray-800 font-bold"
-                                    >
-                                      {item.productName}
-                                      {item.image && (
-                                        <Image
-                                          src={urlFor(item.image).url()}
-                                          width={40}
-                                          height={40}
-                                          alt={item.productName}
-                                          className="border border-gray-300 rounded-md"
-                                        />
-                                      )}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
+                             
                             </div>
                           </td>
                         </tr>
