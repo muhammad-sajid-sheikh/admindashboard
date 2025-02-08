@@ -34,7 +34,7 @@ export default function AdminDashboard() {
     fetch("http://localhost:3000/api/orders")
       .then((res) => res.json())
       .then((data) => {
-        const formattedData = data.map((order: { _id: any; name: any; phone: any; email: any; address: any; items: any[]; totalPriceWithVat: any; status: string }) => ({
+        const formattedData = data.map((order: { _id: string; name: string; phone: number; email: string; address: string; items: string[]; totalPriceWithVat: string; status: string }) => ({
           _id: order._id,
           name: order.name,
           phone: order.phone,
